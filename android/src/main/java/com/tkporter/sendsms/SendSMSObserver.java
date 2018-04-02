@@ -119,6 +119,10 @@ public class SendSMSObserver extends ContentObserver {
                 }
             }
         }
+        catch (Exception e) {
+            System.out.println("onChange() error: " + e);
+            messageError();
+        }
         finally {
             if (cursor != null) {
                 cursor.close();
